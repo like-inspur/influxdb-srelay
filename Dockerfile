@@ -36,7 +36,7 @@ RUN go get -u github.com/toni-moreno/influxdb-srelay && \
 
 FROM alpine:latest
 
-COPY --from=build-env /usr/bin/influxdb-srelay /
+COPY --from=build-env /usr/bin/influxdb-srelay /usr/bin/
 COPY --from=build-env /go/src/github.com/toni-moreno/influxdb-srelay/example/sample.influxdb-srelay.conf /etc/influxdb-srelay/
 RUN mkdir -p /var/log/influxdb-srelay
 
